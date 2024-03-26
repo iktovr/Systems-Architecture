@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  db:
+    container_name: postgres
+    image: postgres:15
+    environment:
+    - POSTGRES_USER=stud
+    - POSTGRES_PASSWORD=stud
+    - PGDATA=/data/postgres
+    - POSTGRES_DB=archdb
+    volumes:
+    - db:/data/postgres
+    ports:
+    - "5432:5432"
+
+volumes:
+  db:
